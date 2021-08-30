@@ -50,6 +50,29 @@ app.get('/sorteio', (req,res) =>{
     res.send(`O jogo sorteado foi: <b>${game}</b>`);
 });
 
+app.post('/jogos', (req,res) =>{
+    const jogo = req.body.jogo;
+    const id = jogos.length;
+    jogos.push(jogo);
+});
+
+app.put('/jogos/:id', (req,res) =>{
+    const id = req.params.id -1;
+    const filme = req.body.jogo;
+    const jogoAnterior = jogo[id];
+    jogo[id] = jogo;
+    res.send(`Jogo anterior <b>${jogoAnterior}</b> foi atualizado pelo jogo <b>${jogo}</b>`);
+});
+
+app.delete('jogos/:id', (req,res) =>{
+    const id = req.params.id - 1;
+    if(!jogos[id]){
+        res.send('Jogo não encontrado!!');
+    }
+    delete jogos[id];
+    res.send('Jogo excluido com sucesso!!');
+});
+
 app.listen(port, () =>{
     console.log(`Servidor rodando em: http://localhost/:${port}`);
 });
