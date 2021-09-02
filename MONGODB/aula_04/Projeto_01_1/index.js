@@ -14,13 +14,13 @@ mongoose.connect('mongodb://localhost:27017/usuarios', {
 
 
 
-const usuario1 = new Usuario({
-    nome: 'Rafael',
-    sobrenome: 'Kaminski',
-    cpf: '12345678910',
-    idade: '1982-12-01',
-    senha: '123456'
-});
+// const usuario1 = new Usuario({
+//     nome: 'Rafael',
+//     sobrenome: 'Kaminski',
+//     cpf: '12345678910',
+//     idade: '1982-12-01',
+//     senha: '123456'
+// });
 
 // um dos metodos de como salvar no mongodb
 // usuario1.save()
